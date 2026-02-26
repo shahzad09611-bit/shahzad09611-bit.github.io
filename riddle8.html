@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riddle 8</title>
+<style>
+body{margin:0;font-family:Arial;background:linear-gradient(135deg,#36d1dc,#5b86e5);display:flex;justify-content:center;align-items:center;height:100vh;}
+.box{background:white;padding:30px;border-radius:15px;text-align:center;width:90%;max-width:500px;}
+button{padding:10px 20px;background:#5b86e5;color:white;border:none;border-radius:6px;}
+input{padding:8px;width:80%;margin:10px 0;}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>Riddle 8</h2>
+<p>I run but never walk. I have a mouth but never talk. What am I?</p>
+<input type="text" id="ans">
+<br>
+<button onclick="check()">Submit</button>
+</div>
+<script>
+function check(){
+let a=document.getElementById("ans").value.toLowerCase();
+if(a==="river"){
+window.location.href="riddle9.html";
+}else{
+alert("Wrong answer! Try again.");
+}
+}
+</script>
+</body>
+</html>
