@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>जहां जज्बात रहते है - PART-1</title>
+<style>
+    body { margin:0; font-family:'Noto Sans', sans-serif; background:#f5f1e6; }
+    .book-container { width:90%; max-width:900px; margin:50px auto; perspective:1500px; }
+    .page { width:100%; height:600px; background:#fff; box-shadow:0 5px 15px rgba(0,0,0,0.3); border-radius:10px; position:absolute; transform-origin:left; transition:transform 0.8s; overflow-y:auto; padding:30px; box-sizing:border-box; }
+    .page.cover { background:#0b0c2b; color:#fff; text-align:center; display:flex; flex-direction:column; justify-content:center; align-items:center; font-size:1.2em; }
+    .page img { max-width:60%; margin-bottom:20px; }
+    .book-title { font-size:2em; font-weight:bold; margin-bottom:10px; }
+    .part { font-size:1.2em; margin-bottom:20px; }
+    .author { font-size:1em; font-style:italic; }
+    .button { margin-top:20px; padding:10px 20px; font-size:1em; border:none; border-radius:5px; cursor:pointer; background:#4a90e2; color:#fff; }
+    .navigation { position:absolute; bottom:20px; width:100%; display:flex; justify-content:space-between; }
+    .nav-btn { padding:10px 20px; border:none; border-radius:5px; cursor:pointer; background:#4a90e2; color:#fff; }
+</style>
+</head>
+<body>
+<div class="book-container">
+    <!-- Pages -->
+    <div class="page cover" id="page0">
+        <img src="front_cover_image.png" alt="Front Cover">
+        <div class="book-title">जहां जज्बात रहते है</div>
+        <div class="part">PART-1</div>
+        <div class="author">Mohammad Shahzad</div>
+        <button class="button" onclick="nextPage()">Open Book</button>
+    </div><div class="page" id="page1">
+    <h2>Cream Paper Intro Page</h2>
+    <p>यह सिर्फ एक कहानी नहीं है…<br>यह उन जज्बातों की कहानी है<br>जो कभी कहे नहीं गए<br>लेकिन हमेशा<br>दिल में मौजूद रहे।</p>
+</div>
+
+<div class="page" id="page2">
+    <h2>Blank Page</h2>
+    <p>(यह page intentionally blank रहेगा ताकि book को real book feeling मिले)</p>
+</div>
+
+<div class="page" id="page3">
+    <h2>Page 1</h2>
+    <p>🔒 Locked Story Text Page 1 …</p>
+</div>
+
+<div class="page" id="page4">
+    <h2>Page 2</h2>
+    <p>🔒 Locked Story Text Page 2 …</p>
+</div>
+
+<div class="page" id="page5">
+    <h2>Page 3</h2>
+    <p>🔒 Locked Story Text Page 3 …</p>
+</div>
+
+<div class="page" id="page6">
+    <h2>Page 4</h2>
+    <p>🔒 Locked Story Text Page 4 …</p>
+</div>
+
+<div class="page" id="page7">
+    <h2>Page 5</h2>
+    <p>🔒 Locked Story Text Page 5 …</p>
+</div>
+
+<div class="page" id="page8">
+    <h2>Page 6</h2>
+    <p>🔒 Locked Story Text Page 6 …</p>
+</div>
+
+<div class="page" id="page9">
+    <h2>Page 7-9</h2>
+    <p>🔒 Locked Story Text Pages 7–9 …</p>
+</div>
+
+<div class="page" id="page10">
+    <h2>Page 10 - रिकॉर्ड फाइल</h2>
+    <p>इतने दिनों की मेहनत और मशक्कत के बाद अयान ने अपनी रिकॉर्ड फाइल का काम काफी हद तक पूरा कर लिया था। मगर यह बात सिर्फ अयान और उसके दोनों दोस्त — कबीर और यश — ही जानते थे।<br>
+
+लेकिन अब यह बात पूरी क्लास को पता चल चुकी थी…<br> और इसकी वजह थे प्रोफेसर हेमराज।<br> ...<br> (पूरा आपका भेजा हुआ text यहाँ रहेगा)</p> </div>
+
+<div class="page cover" id="page11">
+    <img src="back_cover_image.png" alt="Back Cover">
+    <div class="book-title">जहां जज्बात रहते है</div>
+    <div class="author">Mohammad Shahzad</div>
+</div>
+
+<!-- Navigation -->
+<div class="navigation">
+    <button class="nav-btn" onclick="prevPage()">Previous</button>
+    <button class="nav-btn" onclick="nextPage()">Next</button>
+</div>
+
+</div><script>
+    let currentPage = 0;
+    const totalPages = 11;
+
+    function showPage(index) {
+        for(let i=0;i<=totalPages;i++) {
+            const page = document.getElementById('page'+i);
+            if(i <= index) {
+                page.style.transform = 'rotateY(-180deg)';
+            } else {
+                page.style.transform = 'rotateY(0deg)';
+            }
+        }
+    }
+
+    function nextPage() {
+        if(currentPage < totalPages) currentPage++;
+        showPage(currentPage);
+    }
+
+    function prevPage() {
+        if(currentPage > 0) currentPage--;
+        showPage(currentPage);
+    }
+
+    // Initialize
+    showPage(0);
+</script></body>
+</html>
